@@ -1,3 +1,5 @@
+from collections import defaultdict
+
 def sockMerchant(n, ar):
 
     pair_count = defaultdict(int)
