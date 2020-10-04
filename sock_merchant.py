@@ -11,4 +11,4 @@ def sockMerchant(n, ar):
             pair_count[key] += 1
     return counter
 
-print(sockMerchant(n, [10 20 20 10 10 30 50 10 20]))
+print(sockMerchant(9, [10, 20, 20, 10, 10, 30, 50, 10, 20]))
