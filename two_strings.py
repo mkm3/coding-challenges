@@ -13,15 +13,15 @@ Input 3: “zzyy”, “yzzz”
 Output 3: false
 """
 
-#func to iterate through string1
-def iterate(string):
+# #func to iterate through string1
+# def iterate(string):
 
-    char_list = []
+#     char_list = []
 
-    for char in string:
-        char_list.append(char)
+#     for char in string:
+#         char_list.append(char)
     
-    return char_list
+#     return char_list
             
 
 def is_anagram(s1, s2):
@@ -34,13 +34,12 @@ def is_anagram(s1, s2):
 
     #if characters in s1 == s2
     else:
-        s1 = iterate(s1)
-        s2 = iterate(s2)
+        s1 = sorted(s1)
+        s2 = sorted(s2)
 
         if s1 == s2:
             return True
-        else:
-            return False
+    return False
 
 print(is_anagram("zzyy", "yzzz")) #False
 print(is_anagram("aab", "aba")) #True

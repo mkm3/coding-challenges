@@ -19,11 +19,13 @@ def print_pairs(arr, target):
     #n is length of array
     n = len(arr)
 
-    #keeps track of one element
+    #keeps track of index from range 0-n
     for i in range(0, n):
-        #keeps track of another element
+        #keeps track of another index from range i + 1, n
         for j in range(i + 1, n):
+            #condition to evaluate if two elements = target
             if (arr[i] + arr[j] == target):
+                #if so, append to our pairs list
                 pairs.append((arr[i], arr[j]))
     return pairs
 
