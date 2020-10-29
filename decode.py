@@ -13,7 +13,7 @@ def decode(s):
         #if you hit an int...the integers you hit in s will tell you how many letters to skip
         num_to_skip = int(s[idx])
 
-        #to find the letter we need to grab
+        #iterating to locate the letter we need to grab
         idx += num_to_skip + 1
 
         #take the last letter and add it to var for string
@@ -31,3 +31,7 @@ def decode(s):
 print(decode("0h")) #'h'
 print(decode("2abh")) #'h'
 print(decode("0h1ae2bcy")) #'hey'
+
+12206.85
+march 26 21
+maturity 2 21
