@@ -24,13 +24,13 @@ def print_pairs(arr, target):
         #keeps track of another index from range i + 1, n
         for j in range(i + 1, n):
             #condition to evaluate if two elements = target
-            if (arr[i] + arr[j] == target):
+            if ((arr[i] + arr[j]) == target):
                 #if so, append to our pairs list
                 pairs.append((arr[i], arr[j]))
     return pairs
 
-print(print_pairs([3, 10, 2, 6, 8, 5], 8))
-
+print("\n Part 1")
+print(print_pairs([3, 10, 2, 6, 8, 5], 8)) #(3,5) (2,6)
 
 
 """
@@ -39,12 +39,12 @@ Part 2 - pairs should not repeat themselves
 
 def print_pairs(arr, target):
 
-    #to remove duplicates, speed runtime
-    arr = set(arr)
-    arr = list(arr)
+    # #to remove duplicates, speed runtime
+    # arr = set(arr)
+    # arr = list(arr)
 
-    #empty list to hold pairs
-    pairs = [] 
+    #empty set to hold pairs
+    pairs = set()
 
     #n is length of array
     n = len(arr)
@@ -54,8 +54,12 @@ def print_pairs(arr, target):
         #keeps track of another element
         for j in range(i + 1, n):
             if (arr[i] + arr[j] == target):
-                pairs.append((arr[i], arr[j]))
+                pairs.sorted(set((arr[i], arr[j])))
+    # arr.pop(0)
     return pairs
 
+print("\n Part 2")
 print(print_pairs([3, 10, 2, 6, 8, 3, 2, 6, 5], 8))
+print(print_pairs([3, 2, 5, 6, 3, 5, 3 ], 8)) #not able to get this edge case #solution #(3,5) (2,6), (3, 5)
+print(print_pairs([1, 1, 2, 2, 2], 3)) #not able to get this edge case #solution = (1,2) (1,2)
 
