@@ -15,11 +15,11 @@ def  lemur(branches):
     if len(branches) == 2 or len(branches) == 3:
         return 1
     #setup while loop
-    while i < len(branches) - 1: #we are ignoring last element in array
+    while i < len(branches) - 1: # we minus 1 to ignore the last element in array and to avoid out of range error
         #setup if statement
-        if branches[i + 2] == 0:
+        if i < len(branches) - 2 and branches[i + 2] == 0: # we minus 2 to ignore the last two element in array and to avoid out of range error
             i += 2
-        #setup else statements
+        #setup else statement
         else:
             i += 1
         #increment jumps counter at every hop
@@ -34,4 +34,7 @@ print(lemur([0, 0])) # 1
 print(lemur([0, 0, 0])) # 1 
 print(lemur([0, 1, 0])) # 1
 print(lemur([0, 0, 1, 0])) # 2
-print(lemur([0, 0, 0, 0, 1, 0, 0, 1, 0])) #5
+print(lemur([0, 0, 0, 0, 1, 0, 0, 1, 0])) # 5
+print(lemur([0, 0, 1, 0, 0, 1, 0])) # 4
+print(lemur([0, 0, 0, 0, 1, 0])) # 3
+print(lemur([0, 0, 0, 1, 0, 0])) # 3
