@@ -42,7 +42,7 @@ class Node(object):
         while current.parent is not None:
             sought_depth += 1
             current = current.parent
-            
+
         cousins = set()
 
         # Recursive function to find examine a node, decide whether to
@@ -75,6 +75,10 @@ class Node(object):
         # We don't want to include the original node
         cousins.remove(self)
         return cousins
+
+a = node("a")
+b = node("b")
+
 
 b.cousins() == {c, d} # True
 c.cousins() == {b, d} # True
