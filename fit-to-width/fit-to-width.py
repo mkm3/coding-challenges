@@ -32,6 +32,38 @@ three
 def fit_to_width(string, limit):
     """Print string within a character limit."""
 
+    #create a reversed stack 'words'
+    words = list(reversed(string.split()))
+
+    #create an empty lines list to hold elements
+    #elements are lines of a valid char count, element <= n
+    lines = []
+
+    #empty list to keep track of the current line
+    curr_line = []
+    #while there are still words in our words list
+    while words:
+        #word = last word in list
+        word = words[-1] 
+        #if length of (curr_line + word) is <= limit  
+        if len(' '.join(curr_line + [word])) <= limit:
+            #append word to curr_line
+            #and pop off the last word on the words list
+            curr_line.append(words.pop())
+
+        #if length "" is > limit:
+        else:
+            # if curr_line: (not necessary)
+            #append curr_line to lines list, join with a space
+            lines.append(' '.join(curr_line))
+            #reset curr_line to empty list
+            curr_line = []
+    
+    lines.append(' '.join(curr_line))
+    
+    for line in lines:
+        print(line)
+
 
 if __name__ == '__main__':
     import doctest
