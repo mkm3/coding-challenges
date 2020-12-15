@@ -56,12 +56,14 @@
 
 def has_balanced_parens(phrase):
   paren_ctr = 0
+  
   for char in phrase:
     if char == "(":
       paren_ctr += 1
     elif char == ")":
       paren_ctr -= 1
     
+    #takes care of edge case when phrase has closed paren first
     if paren_ctr < 0:
       return False
 
